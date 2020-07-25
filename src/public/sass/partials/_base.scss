@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/** global resets **/
+* {
+  //border: solid 2px red;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  border: none;
+  font-family: 'Rubik', 'sans-serif';
+  color: palette(text);
+}
+
+/** page layout **/
+body {
+  display: flex;
+  flex-flow: row nowrap;
+
+  #sidebar { // should use media queries here (and also, no px), but for now 300px is good enough
+    width: 300px;
+  }
+
+  main {
+    flex: 1;
+  }
+}
+
+/** generic styles **/
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: grey;
+    transition: all ease-in-out 0.1s;
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.column {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.title {
+  text-align: center;
+}
+

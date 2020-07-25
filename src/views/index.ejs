@@ -1,0 +1,18 @@
+<%- include('_layouts/header') %>
+
+<%- include('_partials/sidebar') %>
+
+<main id="dashboard">
+  <h1>Welcome back, <%= user %></h1>
+  <div class="card">
+    <div class="title">Active pods</div>
+    This is where the aggregated datasets show.
+  </div>
+  <div class="card">
+    <div class="title">Manage hatchlings</div>
+    This is where you manage the individual scrappers
+  </div>
+  <script type="text/javascript" src="js/bundle.js"></script>
+</main>
+
+<%- include('_layouts/footer') %>

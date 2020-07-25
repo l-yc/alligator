@@ -1,0 +1,15 @@
+#dashboard {
+  padding: 32px;
+
+  .card {
+    padding: 16px;
+    .title {
+      text-align: start;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+
+    margin: 1em 0;
+  }
+}

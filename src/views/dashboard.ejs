@@ -1,0 +1,24 @@
+<%- include('_layouts/header') %>
+
+<%- include('_partials/sidebar') %>
+
+<main id="dashboard">
+  <h1>Welcome back, <%= user %></h1>
+  <div class="card">
+    <div class="title">Feed</div>
+    This is where you show all the numbers crunched by your sweet little pods.
+  </div>
+  <div class="card">
+    <div class="title">Active pods</div>
+    This is where you manage the aggregated datasets.
+    Try to show a preview list of ~3 most active, with navigation to management page.
+  </div>
+  <div class="card">
+    <div class="title">Manage hatchlings</div>
+    This is where you manage the individual scrappers.
+    Try to show a preview list of ~3 most active, with navigation to management page.
+  </div>
+  <script type="text/javascript" src="js/bundle.js"></script>
+</main>
+
+<%- include('_layouts/footer') %>

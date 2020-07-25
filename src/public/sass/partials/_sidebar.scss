@@ -1,0 +1,42 @@
+#sidebar {
+  & > .title {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: .8em .6em;
+    background-color: palette(theme);
+  }
+
+  //* { border:solid 2px red; }
+
+  ul.section {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1em;
+
+    & > .title {
+      font-size: 1.2em;
+      text-align: start;
+      padding: .4em .6em;
+      border-bottom: solid 1px grey;
+
+      &:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+    }
+
+    & > li.item {
+      margin: 0;
+      padding: .4em .6em;
+      transition: all 0.1s ease-in;
+
+      &:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+    }
+  }
+
+  border-right: solid 2px grey; // tmp
+}
