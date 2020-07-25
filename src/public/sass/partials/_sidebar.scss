@@ -1,4 +1,20 @@
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.clickable {
+  &:hover {
+    background-color: palette(background-dark);
+    cursor: pointer;
+  }
+}
+
 #sidebar {
+  @extend .card;
+  //border-right: solid 2px grey; // tmp
+
   & > .title {
     font-size: 1.2em;
     font-weight: bold;
@@ -8,35 +24,42 @@
 
   //* { border:solid 2px red; }
 
-  ul.section {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 1em;
-
+  .section {
     & > .title {
+      @extend .clickable;
       font-size: 1.2em;
+      font-weight: bold;
       text-align: start;
       padding: .4em .6em;
-      border-bottom: solid 1px grey;
+      background-color: palette(accent-1);
+      color: palette(text-light);
+      //border-bottom: solid 1px grey;
 
       &:hover {
-        background-color: lightgrey;
+        background-color: palette(secondary);
         cursor: pointer;
       }
     }
 
-    & > li.item {
+    & > ul.list {
+      @extend .collapsible;
       margin: 0;
-      padding: .4em .6em;
-      transition: all 0.1s ease-in;
+      padding: 0;
+      list-style: none;
+      font-size: 1em;
+      //background-color: palette(background-dark);
 
-      &:hover {
-        background-color: lightgrey;
-        cursor: pointer;
+      a li.item {
+        @extend .clickable;
+        margin: 0;
+        padding: .4em .6em;
+        transition: all 0.1s ease-in;
+
+        &:hover {
+          border-left: solid 4px palette(secondary);
+          color: initial;
+        }
       }
     }
   }
-
-  border-right: solid 2px grey; // tmp
 }
