@@ -19,6 +19,7 @@ $disabled-color: #d1d1d1;
 $palette: (
   theme: $theme-color,
   theme-filter: mix($theme-color, transparent, 10%),
+  theme-dark: mix($theme-color, #000, 90%),
   secondary: $theme-secondary,
   accent-1: $theme-accent-1,
   background: $background-color,

@@ -3,10 +3,10 @@
   color: palette(background);
   border: solid 2px palette(theme);
   border-radius: 2px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
-  padding: 0.6em 0.6em;
-  margin: 0.2em 0.1em;
+  padding: 0.4em 0.6em;
+  //margin: 0.2em 0.1em;
 
   &:hover, &:active, &:focus {
     background-color: palette(background);

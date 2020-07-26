@@ -1,0 +1,23 @@
+<%- include('../../_layouts/header') %>
+
+<%- include('../../_partials/sidebar') %>
+
+<main id="manage-hatchlings">
+  <h1>Manage hatchlings</h1>
+  <div class="card">
+    <!--<div class="title"></div>-->
+    <form action="/manage/hatchlings/edit">
+      <table id="hatchling-list">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="/js/manage/hatchlings/main.js"></script>
+</main>
+
+<%- include('../../_layouts/footer') %>
