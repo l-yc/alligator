@@ -10,8 +10,12 @@ window.onload = () => {
   fetch('/api/hatchlings/get')
     .then(res => res.json())
     .then(data => {
-      let table: Table = new Table('#hatchling-list', data.hatchlings, [
-        { name: 'Manage', key: 'id' }
-      ]);
+      let table: Table = new Table('#hatchling-list', 
+        [ 'id', 'name' ],
+        data.hatchlings, 
+        [
+          { name: 'Manage', key: 'id' }
+        ]
+      );
     });
 };
