@@ -7,10 +7,8 @@
 @import "components/slider";
 
 @import "partials/base";
-//@import "partials/seer";
-//@import "partials/proctor";
 @import "partials/login";
-//@import "partials/cockpit";
 @import "partials/sidebar";
 @import "partials/dashboard";
-@import "partials/manage_hatchlings";
+@import "partials/manage/hatchlings/main";
+@import "partials/manage/hatchlings/edit";
