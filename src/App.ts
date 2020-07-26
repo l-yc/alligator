@@ -48,10 +48,17 @@ class App {
 
     router.get('/api/hatchlings/get', (req: Request, res: Response) => {
       console.log('GET hatchlings');
-      res.status(200).json({
-        hatchlings: this.data.getHatchlings(),
-        success: true
-      });
+      if (req.query.id) {
+        res.status(200).json({
+          hatchlings: this.data.getHatchlings({ id: req.query.id }),
+          success: true
+        });
+      } else {
+        res.status(200).json({
+          hatchlings: this.data.getHatchlings({}),
+          success: true
+        });
+      }
     });
 
     this.express.use('/', router);
