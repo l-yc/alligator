@@ -1,28 +1,30 @@
-.collapsible {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.clickable {
-  &:hover {
-    background-color: palette(background-dark);
-    cursor: pointer;
-  }
-}
-
 #sidebar {
   @extend .card;
-  //border-right: solid 2px grey; // tmp
 
-  & > .title {
+  .collapsible {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .clickable {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & > a.title {
+    @extend .clickable;
+    display: block;
     font-size: 1.2em;
     font-weight: bold;
     padding: .8em .6em;
     background-color: palette(theme);
-  }
 
-  //* { border:solid 2px red; }
+    &:hover {
+      background-color: palette(theme-dark);
+    }
+  }
 
   .section {
     & > .title {
@@ -33,7 +35,6 @@
       padding: .4em .6em;
       background-color: palette(accent-1);
       color: palette(text-light);
-      //border-bottom: solid 1px grey;
 
       &:hover {
         background-color: palette(secondary);
@@ -41,23 +42,23 @@
       }
     }
 
-    & > ul.list {
+    & > nav.list {
       @extend .collapsible;
       margin: 0;
       padding: 0;
       list-style: none;
       font-size: 1em;
-      //background-color: palette(background-dark);
 
-      a li.item {
+      & > a.item {
         @extend .clickable;
+        display: block;
         margin: 0;
         padding: .4em .6em;
         transition: all 0.1s ease-in;
 
         &:hover {
+          background-color: palette(background-dark);
           border-left: solid 4px palette(secondary);
-          color: initial;
         }
       }
     }

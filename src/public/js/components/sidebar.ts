@@ -13,9 +13,9 @@ export default class Sidebar {
     this.el.addEventListener('click', e => {
       let clicked = e.target as HTMLElement;
       if (clicked.matches('.section > .title')) {
-        let navList = clicked.nextElementSibling;
-        if (navList.style.maxHeight){
-          navList.style.maxHeight = null;
+        let navList = clicked.nextElementSibling as HTMLElement;
+        if (navList.style.maxHeight) {
+          navList.style.maxHeight = '';
         } else {
           navList.style.maxHeight = navList.scrollHeight + "px";
         }
