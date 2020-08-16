@@ -12,6 +12,8 @@ module.exports = {
   watch: true,
   entry: {
     'dashboard': './src/public/js/dashboard.ts',
+    'manage/pods/main': './src/public/js/manage/pods/main.ts',
+    'manage/pods/edit': './src/public/js/manage/pods/edit.ts',
     'manage/hatchlings/main': './src/public/js/manage/hatchlings/main.ts',
     'manage/hatchlings/edit': './src/public/js/manage/hatchlings/edit.ts',
     'style': './src/public/sass/style.scss'
