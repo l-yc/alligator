@@ -38,6 +38,14 @@ class App {
       res.render('dashboard', { title: 'alligator', user: 'admin' }); // TODO: hook this to a login!
     });
 
+    router.get('/manage/pods', function (req: Request, res: Response) {
+      res.render('manage/pods/main', { title: 'manage' }); // TODO: hook this to a login!
+    });
+
+    router.get('/manage/pods/edit', function (req: Request, res: Response) {
+      res.render('manage/pods/edit', { title: 'edit', id: req.query.id }); // TODO: hook this to a login!
+    });
+
     router.get('/manage/hatchlings', function (req: Request, res: Response) {
       res.render('manage/hatchlings/main', { title: 'manage' }); // TODO: hook this to a login!
     });
@@ -46,19 +54,24 @@ class App {
       res.render('manage/hatchlings/edit', { title: 'edit', id: req.query.id }); // TODO: hook this to a login!
     });
 
+    router.get('/api/pods/get', (req: Request, res: Response) => {
+      console.log('GET pods');
+      let query: any = {};
+      if (req.query.id) query.id = req.query.id;
+      res.status(200).json({
+        pods: this.data.getPods(query),
+        success: true
+      });
+    });
+
     router.get('/api/hatchlings/get', (req: Request, res: Response) => {
       console.log('GET hatchlings');
-      if (req.query.id) {
-        res.status(200).json({
-          hatchlings: this.data.getHatchlings({ id: req.query.id }),
-          success: true
-        });
-      } else {
-        res.status(200).json({
-          hatchlings: this.data.getHatchlings({}),
-          success: true
-        });
-      }
+      let query: any = {};
+      if (req.query.id) query.id = req.query.id;
+      res.status(200).json({
+        hatchlings: this.data.getHatchlings(query),
+        success: true
+      });
     });
 
     this.express.use('/', router);
