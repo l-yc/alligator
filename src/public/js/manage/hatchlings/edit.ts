@@ -1,5 +1,5 @@
 import Sidebar from '@/components/sidebar';
-import DataTable from '@/components/dataTable';
+import DataList from '@/components/dataList';
 import { log } from '@/modules/log';
 
 import * as ace from 'ace-builds'
@@ -36,9 +36,7 @@ window.onload = () => {
       if (!data.success) throw new Error('Server response was not ok');
 
       let h = data.hatchlings[0];
-      //let list: DataList = new DataList('#hatchling-info', h, [
-      //  { name: 'Manage', key: 'id' }
-      //]);
+      let list: DataList<any> = new DataList('#hatchling-info', h, ['id','name']);
       editor.setValue(h.code);
     });
 };
