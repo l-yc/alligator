@@ -80,13 +80,7 @@ class DataTable<T> {
 
       let cell: HTMLElement = document.createElement('td');
       actions.forEach(a => {
-        let btn: any = document.createElement('button');
-        btn.innerText = a.name;
-        btn.name = a.key;
-        btn.value = h[a.key];
-        btn.type = 'submit';
-        btn.classList.add('btn');
-        //btn.formAction = 'manage';
+        let btn = a.operation(a, h);
         cell.appendChild(btn);
       });
       row.appendChild(cell);

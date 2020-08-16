@@ -1,5 +1,6 @@
 import Sidebar from '@/components/sidebar';
-import DataTable from '@/components/dataTable';
+import { DataTable, DataAction, DataActionCookbook } from '@/components/dataTable';
+import DataList from '@/components/dataList';
 import { log } from '@/modules/log';
 
 console.clear();
@@ -24,11 +25,13 @@ window.onload = () => {
       if (!data.success) throw new Error('Server response was not ok');
 
       let p = data.pods[0];
-      p.hatchlings.forEach(h => {
-        log(h);
-      });
-      //let list: DataList = new DataList('#hatchling-info', h, [
-      //  { name: 'Manage', key: 'id' }
-      //]);
+      let list: DataList<any> = new DataList('#pod-info', p, ['id','name']);
+      let table: DataTable<any> = new DataTable('#pod-hatchlings', 
+        ['id','name'],
+        p.hatchlings,
+        [
+          <DataAction<any>> { name: 'Remove', key: '', operation: DataActionCookbook.navigate }
+        ]
+      );
     });
 };

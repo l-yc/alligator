@@ -1,5 +1,5 @@
 import Sidebar from '@/components/sidebar';
-import Table from '@/components/dataTable';
+import { DataTable, DataAction, DataActionCookbook } from '@/components/dataTable';
 import { log } from '@/modules/log';
 
 console.clear();
@@ -10,11 +10,11 @@ window.onload = () => {
   fetch('/api/pods/get')
     .then(res => res.json())
     .then(data => {
-      let table: Table = new Table('#pod-list', 
+      let table: DataTable<any> = new DataTable('#pod-list', 
         [ 'id', 'name' ],
         data.pods, 
         [
-          { name: 'Manage', key: 'id' }
+          <DataAction<any>> { name: 'Manage', key: 'id', operation: DataActionCookbook.navigate }
         ]
       );
     });

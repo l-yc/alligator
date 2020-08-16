@@ -7,9 +7,24 @@
   <h1>Pod: <%= id.substr(0,8) %></h1>
   <div class="card">
     <div class="title">Info</div>
+    <table id="pod-info">
+      <tbody>
+      </tbody>
+    </table>
   </div>
   <div class="card">
     <div class="title">Hatchlings</div>
+    <table id="pod-hatchlings">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </div>
 
   <script type="text/javascript" src="/js/manage/pods/edit.js"></script>
